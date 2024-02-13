@@ -202,7 +202,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'hsexplorer-0fbc5cb7d85b.herokuapp.com']
 
 SOCIALACCOUNT_PROVIDERS = {
 "google": {
