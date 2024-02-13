@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="150mm"
+   height="60mm"
+   viewBox="0 0 150 60"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="logo-3.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:export-filename="..\logo.png"
+   inkscape:export-xdpi="54.857143"
+   inkscape:export-ydpi="54.857143"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="697.14286"
+     inkscape:cy="-98.928571"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="2560"
+     inkscape:window-height="1351"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     units="mm"
+     height="48mm"
+     inkscape:snap-text-baseline="true"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:14.1111px;line-height:1;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Bold';letter-spacing:-0.264583px;fill:#000f18;stroke-width:0.32"
+       x="26.836309"
+       y="40.443451"
+       id="text3216"><tspan
+         sodipodi:role="line"
+         id="tspan3214"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;font-family:PMingLiU-ExtB;-inkscape-font-specification:'PMingLiU-ExtB Bold';fill:#000000;stroke-width:0.32"
+         x="26.836309"
+         y="40.443451">HS Explorer</tspan></text>
+    <g
+       id="g20"
+       transform="matrix(0.26458333,0,0,0.26458333,2.8348243,22.489583)"
+       style="fill:#008080">
+      <path
+         d="M 46,22 H 22 v 24 h 24 z m -8,16 h -8 v -8 h 8 z"
+         id="path4"
+         style="fill:#008080" />
+      <path
+         d="M 22,78 H 46 V 54 H 22 Z m 8,-16 h 8 v 8 h -8 z"
+         id="path6"
+         style="fill:#008080" />
+      <path
+         d="M 78,22 H 54 v 24 h 24 z m -8,16 h -8 v -8 h 8 z"
+         id="path8"
+         style="fill:#008080" />
+      <rect
+         x="62"
+         y="62"
+         width="8"
+         height="8"
+         id="rect10"
+         style="fill:#008080" />
+      <rect
+         x="70"
+         y="54"
+         width="8"
+         height="8"
+         id="rect12"
+         style="fill:#008080" />
+      <rect
+         x="54"
+         y="54"
+         width="8"
+         height="8"
+         id="rect14"
+         style="fill:#008080" />
+      <rect
+         x="70"
+         y="70"
+         width="8"
+         height="8"
+         id="rect16"
+         style="fill:#008080" />
+      <rect
+         x="54"
+         y="70"
+         width="8"
+         height="8"
+         id="rect18"
+         style="fill:#008080" />
+    </g>
+  </g>
+</svg>

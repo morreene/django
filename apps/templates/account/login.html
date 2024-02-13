@@ -1,0 +1,130 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Login {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-header card-header-primary">
+          <h4 class="card-title">
+            Login
+          </h4>
+        </div>
+        <div class="card-body">
+
+            {% load socialaccount %}
+
+            <h3>Google Login</h3>
+            <a href="{% provider_login_url 'google' %}?next=/subscriptions-home/">Login with Google</a>
+            
+            {% if user.is_authenticated %}
+            <p>You are logged in as {{user.email}}</p>
+            <a href="{% url 'logout' %}?next=/">Logout</a>
+            {% endif %}
+            
+            
+            {% load account %}
+            
+            <h3>Login / Logout</h3>
+            
+            {% if user.is_authenticated %}
+                <p>Logged in with e-mail: {{ request.user.email }}</p>
+                <a href="{% url "account_logout" %}">Logout</a>
+            {% else %}
+                <form action="{% url "account_login" %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" placeholder="E-mail" name="login">
+                    <input type="password" placeholder="Password" name="password">
+                    <label for="id_remember_menu" class="text-primary">Remember Me:</label>
+                    <input id="id_remember_menu" name="remember" type="checkbox">
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <button type="submit">Login</button>
+                    <a href="{% url 'account_reset_password' %}">Forgot Password?</a>
+                </form>
+                <!-- Add this line for the registration link -->
+                <p>Don't have an account? <a href="{% url 'account_signup' %}">Sign up</a></p>
+            {% endif %}
+            
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
