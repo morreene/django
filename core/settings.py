@@ -6,6 +6,7 @@ Copyright (c) 2019 - present AppSeed.us
 import os
 from decouple import config
 from unipath import Path
+import dj_database_url    # For Heroku DB
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).parent
@@ -20,14 +21,9 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 # load production server from .env
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', config('SERVER', default='127.0.0.1')]
 
+SITE_ID = 2 # DY
 
 # Application definition
-SITE_ID = 2
-
-# Application definition
-
-
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -36,7 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # # OAuth
+    # AllAuth
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -46,19 +42,13 @@ INSTALLED_APPS = [
     'apps.users',
     'rest_framework',
 
-
-
-
-
     'apps.home',  # Enable the inner home (home)
     'apps.dash',
 
     'django_plotly_dash.apps.DjangoPlotlyDashConfig', #DY
     'dpd_static_support', #DY
-    # 'subscriptions.apps.SubscriptionsConfig', #DY
-    'apps.subscriptions',
+    'apps.subscriptions', #DY
     # 'app.subscriptions.apps.SubscriptionsConfig', #DY
-
 ]
 
 MIDDLEWARE = [
@@ -84,8 +74,6 @@ PLOTLY_COMPONENTS = [
     'dash_renderer',
     'dpd_components'    
 ]
-
-
 
 ROOT_URLCONF = 'core.urls'
 LOGIN_REDIRECT_URL = "home"  # Route defined in home/urls.py
@@ -116,13 +104,14 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-import dj_database_url
 
 DATABASES = {
+    # # For localhost
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': 'db.sqlite3',
     # },
+    # For Heroku
     'default': dj_database_url.config(conn_max_age=600)
 }
 
@@ -162,6 +151,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
+
 STATIC_ROOT = os.path.join(CORE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
@@ -170,47 +160,36 @@ STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'apps/static'),
 )
 
-
 #############################################################
 #############################################################
 
-
-# ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
-
+# Stripe
 STRIPE_PUBLISHABLE_KEY = 'pk_test_7GkW4sC4fU3LoLiKRfUKvCRc'
 STRIPE_SECRET_KEY = 'sk_test_jq0oD1JKfQTuFEM3NL145Wps'
 STRIPE_PRICE_ID = 'price_1OhfK8HazaBU80KQZlz33YLD'
 STRIPE_ENDPOINT_SECRET = 'whsec_06664617082abc873651b86b10bd4715546aedad9f9800def0ce2dbf8c572828'
 
-
-
-##################### OAuth
-
-
+# OAuth
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend'
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 LOGIN_REDIRECT_URL = '/subscription/'
 LOGOUT_REDIRECT_URL = '/'
   
-# DY
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # DY
 # ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'hsexplorer-0fbc5cb7d85b.herokuapp.com']
+SOCIALACCOUNT_LOGIN_ON_GET=True #DY skip google redirect
 
 SOCIALACCOUNT_PROVIDERS = {
-"google": {
-    "APP": {
-        "client_id": "1050681226172-1bde5vtrb5ivvk4733b9hhkh4fmv9g3u.apps.googleusercontent.com",
-        "secret": "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",
+    "google": {
+        "APP": {
+            "client_id": "1050681226172-1bde5vtrb5ivvk4733b9hhkh4fmv9g3u.apps.googleusercontent.com",
+            "secret": "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",
+        },
     },
-},
 }

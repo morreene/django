@@ -1,0 +1,44 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Login {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Reset Password</h4>
+            </div>
+            <div class="card-body">
+
+                {% block account_google_redirect_form %}{% endblock %}
+
+                <h2>Sign In Via Google</h2>
+                <p>You are about to sign in using a third-party account from Google.</p>
+            
+                <!-- Your custom styling and content here -->
+            
+                <form method="post" action="{% url 'socialaccount_connections' %}">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <button type="submit">Connect to Google</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
+
+
